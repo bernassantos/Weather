@@ -95,7 +95,7 @@ namespace Tempo
 
             textBox1.Text = weather.Data[Dia].tMax;
             textBox2.Text = weather.Data[Dia].tMin;
-            textBox3.Text = weather.DataUpdate.AddHours(1).ToString(CultureInfo.InvariantCulture);
+            textBox3.Text = weather.DataUpdate.AddHours(1).ToString(CultureInfo.CurrentCulture);
             textBox7.Text = weather.Data[Dia].predWindDir;
 
             pictureBox1.Image = weather.Data[Dia].idWeatherType switch
@@ -104,13 +104,18 @@ namespace Tempo
                 2 => Image.FromFile("cloud_sun.png"),
                 3 => Image.FromFile("cloud_sun.png"),
                 4 => Image.FromFile("cloud.png"),
+                5 => Image.FromFile("cloud_sun.png"),
+                6 => Image.FromFile("rain_drops.png"),
+                7 => Image.FromFile("rain_drops.png"),
+                8 => Image.FromFile("cloud_rain.png"),
                 9 => Image.FromFile("cloud_rain.png"),
+                10 => Image.FromFile("rain_drops.png"),
+                11 => Image.FromFile("cloud_rain.png"),
                 15 => Image.FromFile("rain_drops.png"),
                 18 => Image.FromFile("cloud_snow.png"),
                 27 => Image.FromFile("cloud.png"),
                 _ => pictureBox1.Image
             };
-            
         }
 
         private void hojeToolStripMenuItem_Click(object sender, EventArgs e)
